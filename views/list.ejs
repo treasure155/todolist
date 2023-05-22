@@ -1,0 +1,30 @@
+<%- include("header") -%>
+
+  <div class="box" id="heading">
+    <h1><%= listTitle %></h1>
+  </div>
+
+  <div class="box">
+    <% for (var i = 0; i < newListItems.length; i++) { %>
+    <div class="item">
+      <input type="checkbox">
+      <p><%= newListItems[i] %></p>
+    </div>
+    <% } %>
+
+    <% if (listTitle === "Work List") { %>
+    <form class="" action="/work" method="post">
+    <% } else if (listTitle === "Urgent List") { %>
+    <form class="" action="/urgent" method="post">
+    <% } else { %>
+    <form class="" action="/" method="post">
+    <% } %>
+      <input type="text" name="newItem" placeholder="New Item">
+      <button type="submit" name="button" class="btn btn-primary">+</button>
+    </form>
+
+  </div>
+
+  <footer>
+      <p>&copy; 2023 TechAlpha. All rights reserved.</p>
+    </footer>
